@@ -8,17 +8,18 @@ class Example(wx.Frame):
 		self.Show()
 
 	def InitUI(self):
-		menubar = wx.MenuBar()
-		filem = wx.Menu()
-		editm = wx.Menu()
-		helpm = wx.Menu()
-		menubar.Append(filem, '&File')
-		menubar.Append(editm, 'Edit')
-		menubar.Append(helpm, '&Help')
-		self.SetMenuBar(menubar)
-		wx.TextCtrl(self)
+		panel = wx.Panel(self,pos=(0, 30), size=(20,20))
+		#panel.SetBackGroundColour('#4f5049')
+		vbox = wx.BoxSizer(wx.VERTICAL)
+		
+		midPan = wx.Panel(self, pos=(30, 70), size=(20,20))
+
+		#midPan.SetBackGroundColour('red')
+
+		vbox.Add(midPan, 1, wx.EXPAND | wx.LEFT, 20)
+		panel.SetSizer(vbox)
 
 if __name__ == '__main__':
 	app = wx.App()
-	Example(None, title='')
+	Example(None, title='Border')
 	app.MainLoop()
