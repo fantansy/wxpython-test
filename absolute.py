@@ -8,15 +8,18 @@ class Example(wx.Frame):
 		self.Show()
 
 	def InitUI(self):
-		panel = wx.Panel(self,pos=(0, 30), size=(20,20))
+
+		panel = wx.Panel(self)
+
 		#panel.SetBackGroundColour('#4f5049')
+		panel.SetBackgroundColour('#4f5049')
+		
 		vbox = wx.BoxSizer(wx.VERTICAL)
 		
-		midPan = wx.Panel(self, pos=(30, 70), size=(20,20))
+		midPan = wx.Panel(panel)
+		midPan.SetBackgroundColour('#dcdcdc')
 
-		#midPan.SetBackGroundColour('red')
-
-		vbox.Add(midPan, 1, wx.EXPAND | wx.LEFT, 20)
+		vbox.Add(midPan, 1, wx.EXPAND | wx.LEFT, 30)
 		panel.SetSizer(vbox)
 
 if __name__ == '__main__':
