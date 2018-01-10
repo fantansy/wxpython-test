@@ -8,7 +8,6 @@ class Example(wx.Frame):
 		self.Show()
 
 	def InitUI(self):
-		panel = wx.Panel(self, -1)
 		menubar = wx.MenuBar()
 		filem = wx.Menu()
 		editm = wx.Menu()
@@ -17,7 +16,7 @@ class Example(wx.Frame):
 		menubar.Append(editm, 'Edit')
 		menubar.Append(helpm, '&Help')
 		self.SetMenuBar(menubar)
-		wx.TextCtrl(panel, pos=(3,3))
+		wx.TextCtrl(self)
 
 if __name__ == '__main__':
 	app = wx.App()
